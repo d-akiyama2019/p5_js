@@ -1,5 +1,6 @@
 # p5_js
 
+- index.html
 ```html
 <html>
 
@@ -14,6 +15,7 @@
 </html>
 ```
 
+- sketch.js
 ```js
 function setup() {
     createCanvas(800, 600);
