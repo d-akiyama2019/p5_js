@@ -20,13 +20,16 @@ function setup() {
     angle_2 = 0;
     angle_3 = 0;
     count = -1;
-    interval = 64;
+    interval = 56;
+    step = 0;
+    bg_color_w = "#e4e2e0";
+    bg_color_b = "#666666";
+    bg_color = bg_color_w;
     createCanvas(width, height);
-    background("#e4e2e0");
+    background(bg_color);
 }
 
 function draw() {
-
     count++;
     if (
         (count >= interval / 4 * 0 && count < interval / 4 * 1) ||
@@ -40,14 +43,24 @@ function draw() {
         angle_2 += 8 * PI / interval;
     if (count >= 0 && count < interval / 2)
         angle_3 += 4 * PI / interval;
-    if (count >= interval) count = -1;
+    if (count >= interval) {
+        count = -1;
+        step += 1;
+    }
 
-    stroke("#e4e2e0");
+    if (step % 8 == 0) {
+        bg_color = bg_color_w;
+        step = 0
+    }
+    if ((step + 4) % 8 == 0) bg_color = bg_color_b;
+
+    background(bg_color);
     strokeWeight(2);
 
     translate(width / 2, height / 2);
     rotate(angle_3 / 26);
     translate(-width / 2, -height / 2);
+    stroke(bg_color);
     for (var i = 0; i < 26; i++) {
         switch (i) {
             case 0:
@@ -169,7 +182,7 @@ function draw() {
     rotate(-angle_3 / 26);
     rotate(angle_2 / 4);
     translate(-width / 2, -height / 2);
-    stroke("#e4e2e0");
+    stroke(bg_color);
     for (var i = 0; i < 4; i++) {
         switch (i) {
             case 0:
