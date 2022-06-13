@@ -152,6 +152,10 @@ function draw() {
             width / 2, height / 2,
             radius / 2 * 5, i * PI / 13
         );
+        lineArg(
+            width / 2, height / 2,
+            radius / 2 * 5, (i + 1) * PI / 13
+        );
     }
 
     for (var i = 0; i < 26; i++) {
@@ -174,7 +178,7 @@ function draw() {
         );
         lineArg(
             width / 2, height / 2,
-            radius / 2 * 5, i * PI / 13
+            radius / 2 * 4, (i + 1) * PI / 13
         );
     }
 
@@ -206,6 +210,10 @@ function draw() {
         lineArg(
             width / 2, height / 2,
             radius / 2 * 3, (i + 1 / 2) * PI / 2
+        );
+        lineArg(
+            width / 2, height / 2,
+            radius / 2 * 3, (i + 1 + 1 / 2) * PI / 2
         );
     }
 
@@ -242,6 +250,10 @@ function draw() {
         lineArg(
             width / 2, height / 2,
             radius / 2 * 2, i * PI / 3
+        );
+        lineArg(
+            width / 2, height / 2,
+            radius / 2 * 2, (i + 1) * PI / 3
         );
     }
 }
