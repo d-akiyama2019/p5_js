@@ -52,7 +52,8 @@ function draw() {
         bg_color = bg_color_w;
         step = 0
     }
-    if ((step + 4) % 8 == 0) bg_color = bg_color_b;
+    if ((step + 4) % 8 == 0)
+        bg_color = bg_color_b;
 
     background(bg_color);
     strokeWeight(2);
@@ -175,6 +176,10 @@ function draw() {
             width / 2, height / 2,
             radius * 4, radius * 4,
             i * PI / 13, (i + 1) * PI / 13
+        );
+        lineArg(
+            width / 2, height / 2,
+            radius / 2 * 4, i * PI / 13
         );
         lineArg(
             width / 2, height / 2,
